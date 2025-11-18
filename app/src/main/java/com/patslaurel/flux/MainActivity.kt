@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import com.patslaurel.flux.ui.theme.FluxTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TodoScreen()
+                    TaskListScreen()
                 }
             }
         }
@@ -35,12 +34,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TodoScreen() {
+fun TaskListScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        androidx.compose.foundation.layout.Column(
+        Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
@@ -58,8 +57,8 @@ fun TodoScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun TodoPreview() {
+fun TaskListPreview() {
     FluxTheme {
-        TodoScreen()
+        TaskListScreen()
     }
 }
