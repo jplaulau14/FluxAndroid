@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.patslaurel.flux.ui.theme.FluxSuccess
 import com.patslaurel.flux.ui.theme.FluxTheme
 
 class MainActivity : ComponentActivity() {
@@ -70,12 +71,13 @@ fun TaskRowItem(task: Task) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             imageVector = if (task.isCompleted) Icons.Default.CheckCircle else Icons.Default.CheckCircle,
             contentDescription = null,
-            tint = if (task.isCompleted) Color.Green else Color.Gray,
+            tint = if (task.isCompleted) FluxSuccess else MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(24.dp)
         )
 
