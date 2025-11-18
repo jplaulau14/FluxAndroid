@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -75,8 +75,8 @@ fun TaskRowItem(task: Task) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            imageVector = if (task.isCompleted) Icons.Default.CheckCircle else Icons.Default.CheckCircle,
-            contentDescription = null,
+            imageVector = if (task.isCompleted) Icons.Filled.CheckCircle else Icons.Outlined.CheckCircle,
+            contentDescription = if (task.isCompleted) "Completed" else "Not completed",
             tint = if (task.isCompleted) FluxSuccess else MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(24.dp)
         )
